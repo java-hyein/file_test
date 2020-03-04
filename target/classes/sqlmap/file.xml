@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gasan.test.first.FileMapper">
+
+	<select id ="fileView" resultType ="gasan.test.first.FileVO">
+		select gdsNum, gdsName,gdsImg, gdsThumbImg from tbl_goods order by gdsNum desc
+	</select>
+	
+	<insert id="fileInsert">
+		insert into tbl_goods (gdsNum, gdsName, gdsImg, gdsThumbImg) 
+		values(tbl_goods_seq.nextval, #{gdsName}, #{gdsImg}, #{gdsThumbImg})
+	</insert>
+	
+</mapper>
